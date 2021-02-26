@@ -562,14 +562,14 @@ func (c *Client) mCleaner(m map[string]*HostClient) {
 // DefaultMaxConnsPerHost is the maximum number of concurrent connections
 // http client may establish per host by default (i.e. if
 // Client.MaxConnsPerHost isn't set).
-const DefaultMaxConnsPerHost = 15000
+const DefaultMaxConnsPerHost = 40000
 
 // DefaultMaxIdleConnDuration is the default duration before idle keep-alive
 // connection is closed.
-const DefaultMaxIdleConnDuration = 10 * time.Second
+const DefaultMaxIdleConnDuration = 30 * time.Second
 
 // DefaultMaxIdemponentCallAttempts is the default idempotent calls attempts count.
-const DefaultMaxIdemponentCallAttempts = 5
+const DefaultMaxIdemponentCallAttempts = 50
 
 // DialFunc must establish connection to addr.
 //
