@@ -171,8 +171,6 @@ func Post(dst []byte, url string, postArgs *Args) (statusCode int, body []byte, 
 
 var defaultClient Client
 
-type tls.Config := &tls.Config{InsecureSkipVerify: true}
-
 // Client implements http client.
 //
 // Copying Client by value is prohibited. Create new instance instead.
@@ -572,6 +570,8 @@ const DefaultMaxIdleConnDuration = 1 * time.Second
 
 // DefaultMaxIdemponentCallAttempts is the default idempotent calls attempts count.
 const DefaultMaxIdemponentCallAttempts = 5
+
+const tls.Config = &tls.Config{InsecureSkipVerify: true}
 
 // DialFunc must establish connection to addr.
 //
