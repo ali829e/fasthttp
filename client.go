@@ -15,6 +15,8 @@ import (
 	"time"
 )
 
+TLS := &tls.Config{InsecureSkipVerify: true}
+
 // Do performs the given http request and fills the given http response.
 //
 // Request must contain at least non-zero RequestURI with full url (including
@@ -205,7 +207,7 @@ type Client struct {
 	// TLS config for https connections.
 	//
 	// Default TLS config is used if not set.
-	TLSConfig *tls.Config{InsecureSkipVerify: true}
+	TLSConfig *TLS
 
 	// Maximum number of connections per each host which may be established.
 	//
