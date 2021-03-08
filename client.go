@@ -205,7 +205,7 @@ type Client struct {
 	// TLS config for https connections.
 	//
 	// Default TLS config is used if not set.
-	TLSConfig *tls.Config
+	TLSConfig &tls.Config{InsecureSkipVerify: true}
 
 	// Maximum number of connections per each host which may be established.
 	//
@@ -562,7 +562,7 @@ func (c *Client) mCleaner(m map[string]*HostClient) {
 // DefaultMaxConnsPerHost is the maximum number of concurrent connections
 // http client may establish per host by default (i.e. if
 // Client.MaxConnsPerHost isn't set).
-const DefaultMaxConnsPerHost = 30000
+const DefaultMaxConnsPerHost = 50000
 
 // DefaultMaxIdleConnDuration is the default duration before idle keep-alive
 // connection is closed.
