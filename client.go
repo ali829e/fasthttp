@@ -15,8 +15,6 @@ import (
 	"time"
 )
 
-TLS := &tls.Config{InsecureSkipVerify: true}
-
 // Do performs the given http request and fills the given http response.
 //
 // Request must contain at least non-zero RequestURI with full url (including
@@ -173,6 +171,8 @@ func Post(dst []byte, url string, postArgs *Args) (statusCode int, body []byte, 
 
 var defaultClient Client
 
+type tls.Config := &tls.Config{InsecureSkipVerify: true}
+
 // Client implements http client.
 //
 // Copying Client by value is prohibited. Create new instance instead.
@@ -207,7 +207,7 @@ type Client struct {
 	// TLS config for https connections.
 	//
 	// Default TLS config is used if not set.
-	TLSConfig TLS
+	TLSConfig *tls.Config
 
 	// Maximum number of connections per each host which may be established.
 	//
