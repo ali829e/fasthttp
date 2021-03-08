@@ -207,7 +207,7 @@ type Client struct {
 	// TLS config for https connections.
 	//
 	// Default TLS config is used if not set.
-	TLSConfig *TLS
+	TLSConfig = TLS
 
 	// Maximum number of connections per each host which may be established.
 	//
