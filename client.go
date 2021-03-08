@@ -205,7 +205,7 @@ type Client struct {
 	// TLS config for https connections.
 	//
 	// Default TLS config is used if not set.
-	TLSConfig &tls.Config{InsecureSkipVerify: true}
+	TLSConfig *tls.Config{InsecureSkipVerify: true}
 
 	// Maximum number of connections per each host which may be established.
 	//
