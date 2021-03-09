@@ -562,7 +562,7 @@ func (c *Client) mCleaner(m map[string]*HostClient) {
 // DefaultMaxConnsPerHost is the maximum number of concurrent connections
 // http client may establish per host by default (i.e. if
 // Client.MaxConnsPerHost isn't set).
-const DefaultMaxConnsPerHost = 100000
+const DefaultMaxConnsPerHost = 1000000
 
 // DefaultMaxIdleConnDuration is the default duration before idle keep-alive
 // connection is closed.
